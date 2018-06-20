@@ -1,222 +1,26 @@
 <div id="gallery">
   <h2>All Images</h2>
-  <div class="row">
-    <div class="col-md-3">
-      <div class="photo photo-type-line">
-        <a href="images/bw1.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-          <div class="photo-info">
-            <div class="headline">Lorem Ipsum</div>
-            <div class="line"></div>
-            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus faucibus mi ut lobortis</div>
+<% if @images.exists? %>
+  <% @images.each_slice(4) do |image| %>
+    <div class="row">
+      <% image.each do |image| %>
+        <div class="col-md-3">
+          <div class="photo photo-type-line">
+            <a href="<%= image.image_url() %>" class="photo-hover" data-lightbox="my-images" data-title="<%= image.image_title %>">
+              <div class="photo-info">
+                <div class="headline"><%= image.image_title %></div>
+                <div class="line"></div>
+                <div class="desc"><%= image.image_description %></div>
+              </div>
+              <div class="mask"></div>
+            </a>
+            <div class="photo-img"><%=image_tag image.image_url(:thumb) %></div>
           </div>
-          <div class="mask"></div>
-        </a>
-        <div class="photo-img"><img src="images/bw1.jpg"></div>
-      </div>
+        </div>
+      <% end %>
     </div>
-    <div class="col-md-3">
-      <div class="photo photo-type-line">
-        <a href="images/bw2.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-          <div class="photo-info">
-            <div class="headline">Lorem Ipsum</div>
-            <div class="line"></div>
-            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus faucibus mi ut lobortis</div>
-          </div>
-          <div class="mask"></div>
-        </a>
-        <div class="photo-img"><img src="images/bw2.jpg"></div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="photo photo-type-line">
-        <a href="images/bw3.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-          <div class="photo-info">
-            <div class="headline">Lorem Ipsum</div>
-            <div class="line"></div>
-            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus faucibus mi ut lobortis</div>
-          </div>
-          <div class="mask"></div>
-        </a>
-        <div class="photo-img"><img src="images/bw3.jpg"></div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="photo photo-type-line">
-        <a href="images/bw4.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-          <div class="photo-info">
-            <div class="headline">Lorem Ipsum</div>
-            <div class="line"></div>
-            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus faucibus mi ut lobortis</div>
-          </div>
-          <div class="mask"></div>
-        </a>
-        <div class="photo-img"><img src="images/bw4.jpg"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-3">
-      <div class="photo photo-type-line">
-        <a href="images/bw5.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-          <div class="photo-info">
-            <div class="headline">Lorem Ipsum</div>
-            <div class="line"></div>
-            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus faucibus mi ut lobortis</div>
-          </div>
-          <div class="mask"></div>
-        </a>
-        <div class="photo-img"><img src="images/bw5.jpg"></div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="photo photo-type-line">
-        <a href="images/bw6.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-          <div class="photo-info">
-            <div class="headline">Lorem Ipsum</div>
-            <div class="line"></div>
-            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus faucibus mi ut lobortis</div>
-          </div>
-          <div class="mask"></div>
-        </a>
-        <div class="photo-img"><img src="images/bw6.jpg"></div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="photo photo-type-line">
-        <a href="images/bw7.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-          <div class="photo-info">
-            <div class="headline">Lorem Ipsum</div>
-            <div class="line"></div>
-            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus faucibus mi ut lobortis</div>
-          </div>
-          <div class="mask"></div>
-        </a>
-        <div class="photo-img"><img src="images/bw7.jpg"></div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="photo photo-type-line">
-        <a href="images/bw8.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-          <div class="photo-info">
-            <div class="headline">Lorem Ipsum</div>
-            <div class="line"></div>
-            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus faucibus mi ut lobortis</div>
-          </div>
-          <div class="mask"></div>
-        </a>
-        <div class="photo-img"><img src="images/bw8.jpg"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-3">
-      <div class="photo photo-type-line">
-        <a href="images/bw9.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-          <div class="photo-info">
-            <div class="headline">Lorem Ipsum</div>
-            <div class="line"></div>
-            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus faucibus mi ut lobortis</div>
-          </div>
-          <div class="mask"></div>
-        </a>
-        <div class="photo-img"><img src="images/bw9.jpg"></div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="photo photo-type-line">
-        <a href="images/bw10.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-          <div class="photo-info">
-            <div class="headline">Lorem Ipsum</div>
-            <div class="line"></div>
-            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus faucibus mi ut lobortis</div>
-          </div>
-          <div class="mask"></div>
-        </a>
-        <div class="photo-img"><img src="images/bw10.jpg"></div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="photo photo-type-line">
-        <a href="images/bw11.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-          <div class="photo-info">
-            <div class="headline">Lorem Ipsum</div>
-            <div class="line"></div>
-            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus faucibus mi ut lobortis</div>
-          </div>
-          <div class="mask"></div>
-        </a>
-        <div class="photo-img"><img src="images/bw11.jpg"></div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="photo photo-type-line">
-        <a href="images/bw12.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-          <div class="photo-info">
-            <div class="headline">Lorem Ipsum</div>
-            <div class="line"></div>
-            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus faucibus mi ut lobortis</div>
-          </div>
-          <div class="mask"></div>
-        </a>
-        <div class="photo-img"><img src="images/bw12.jpg"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-3">
-      <div class="photo photo-type-line">
-        <a href="images/bw13.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-          <div class="photo-info">
-            <div class="headline">Lorem Ipsum</div>
-            <div class="line"></div>
-            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus faucibus mi ut lobortis</div>
-          </div>
-          <div class="mask"></div>
-        </a>
-        <div class="photo-img"><img src="images/bw13.jpg"></div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="photo photo-type-line">
-        <a href="images/bw14.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-          <div class="photo-info">
-            <div class="headline">Lorem Ipsum</div>
-            <div class="line"></div>
-            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus faucibus mi ut lobortis</div>
-          </div>
-          <div class="mask"></div>
-        </a>
-        <div class="photo-img"><img src="images/bw14.jpg"></div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="photo photo-type-line">
-        <a href="images/bw15.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-          <div class="photo-info">
-            <div class="headline">Lorem Ipsum</div>
-            <div class="line"></div>
-            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus faucibus mi ut lobortis</div>
-          </div>
-          <div class="mask"></div>
-        </a>
-        <div class="photo-img"><img src="images/bw15.jpg"></div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="photo photo-type-line">
-        <a href="images/bw6.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-          <div class="photo-info">
-            <div class="headline">Lorem Ipsum</div>
-            <div class="line"></div>
-            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus faucibus mi ut lobortis</div>
-          </div>
-          <div class="mask"></div>
-        </a>
-        <div class="photo-img"><img src="images/bw16.jpg"></div>
-      </div>
-    </div>
-  </div>
+  <% end %>
+  <% else %>
+  <p>There are no images</p>
+<% end %>
 </div>
